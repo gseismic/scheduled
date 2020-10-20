@@ -1,9 +1,13 @@
 # scheduled
+Demo Redis-based Task scheduler
+
+## Structure
     fetcher     : fetch data from the Internet
     key_yielder : 生产Key
     distributer : 生产Key
     worker      : 运行
-## 应用场景: 
+## Demo
+Task Distributer:
 ```python
 import scheduled
 
@@ -19,7 +23,7 @@ distributer = scheduled.Distributer(q, yielder)
 distributer.run()
 ```
 
-工作者Worker
+Worker:
 ```python
 import scheduled
 

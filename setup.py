@@ -6,7 +6,7 @@ setup(
     version='0.1.0', 
     packages=find_packages(),
     description='demo redis-based task schedule lib',
-    install_requires = ['redis'],
+    install_requires = ['redis', 'logbook'],
     scripts=[],
     python_requires = '>=3',
     include_package_data=True,
