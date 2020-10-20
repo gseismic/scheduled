@@ -3,9 +3,10 @@ Demo Redis-based Task scheduler
 
 ## Structure
     fetcher     : fetch data from the Internet
-    key_yielder : 生产Key
-    distributer : 生产Key
-    worker      : 运行
+    key_yielder : Key yielder
+    distributer : Key Distributer
+    worker      : Worker
+
 ## Demo
 Task Distributer:
 ```python
