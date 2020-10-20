@@ -5,7 +5,7 @@ setup(
     name='scheduled', 
     version='0.1.0', 
     packages=find_packages(),
-    description='redis-based task schedule lib',
+    description='demo redis-based task schedule lib',
     install_requires = ['redis'],
     scripts=[],
     python_requires = '>=3',
