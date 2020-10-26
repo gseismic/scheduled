@@ -9,7 +9,7 @@ class KeyYielder(scheduled.KeyYielder):
 
 
 def test_dist():
-    q = scheduled.RedisQueue('test:demo', config={})
+    q = scheduled.RedisQueue('test:demo', {}) 
 
     yielder = KeyYielder()
     distributer = scheduled.Distributer(q, yielder)

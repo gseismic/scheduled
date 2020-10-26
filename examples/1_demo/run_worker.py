@@ -1,3 +1,6 @@
+import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+
 import scheduled
 
 
@@ -12,7 +15,7 @@ class Fetcher(scheduled.Fetcher):
     def fetch(self, key):
         return 'result:' + key, {}
 
-queue = scheduled.RedisQueue('test:demo', config={})
+queue = scheduled.RedisQueue('test:demo', {})
 fetcher = Fetcher()
 worker = scheduled.Worker(queue, fetcher=fetcher, pipelines=[])
 err = worker.run()

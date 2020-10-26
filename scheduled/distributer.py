@@ -1,7 +1,10 @@
 import time
-#import uuid
-from .logger import get_logger
+import logging
+# import uuid
+# from .logger import get_logger
 
+
+_logger = logging.getLogger(__name__)
 
 class Distributer(object):
 
@@ -9,7 +12,7 @@ class Distributer(object):
         self.queue = queue 
         self.key_yielder = key_yielder
         self.config = config or {}
-        self.logger = logger or get_logger()
+        self.logger = logger or _logger
 
         # self.run_mode = self.config.get('run_mode', 'once')
         self.recheck_count = self.config.get('recheck_count', 3)
@@ -95,7 +98,7 @@ class Distributer(object):
                 break
 
         if errno == 0:
-            self.logger.notice('Done: Total inserted: %d' % n_inserted)
+            self.logger.info('Done: Total inserted: %d' % n_inserted)
         elif errno == -1:
             self.logger.warning(msg)
         else:

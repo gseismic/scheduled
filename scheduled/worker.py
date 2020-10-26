@@ -1,8 +1,11 @@
 import time
 import enum
 import traceback
-from .logger import get_logger
+import logging
+# from .logger import get_logger
 
+
+_logger = logging.getLogger(__name__)
 
 class WorkerState(enum.IntEnum):
     NotStarted = -1
@@ -23,7 +26,7 @@ class Worker(object):
         self.fetcher = fetcher
         self.pipelines = pipelines
         self.config = config or {}
-        self.logger = logger or get_logger("main")
+        self.logger = logger or _logger
 
         # self.run_mode = self.config.get('run_mode', 'once')
         self.recheck_count = self.config.get('recheck_count', 3)
@@ -73,7 +76,7 @@ class Worker(object):
                 if retry_countdown > 0:
                     self.logger.info('No tasks available, '
                                      '(%d) checks to be continued...' % retry_countdown)
-                    time.sleep(self.config['recheck_sleep'])
+                    time.sleep(self.recheck_sleep)
                     retry_countdown -= 1
                     continue
                 else:

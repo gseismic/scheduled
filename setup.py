@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='scheduled', 
-    version='0.1.0', 
+    version='0.1.1', 
     packages=find_packages(),
     description='demo redis-based task schedule lib',
     install_requires = ['redis', 'logbook'],

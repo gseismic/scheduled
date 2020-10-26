@@ -14,7 +14,7 @@ class Fetcher(scheduled.Fetcher):
 
 
 def test_worker():
-    queue = scheduled.RedisQueue('test:demo', config={})
+    queue = scheduled.RedisQueue('test:demo', {}) 
     fetcher = Fetcher()
 
     worker = scheduled.Worker(queue, fetcher=fetcher, pipelines=[])

@@ -4,7 +4,7 @@ from scheduled import RedisQueue
 
 
 def test_push_pop():
-    q = RedisQueue('test:demo', redis_config={})
+    q = RedisQueue('test:demo', redis_uri={})
     time.sleep(random.random())
     q.reset()
     # assert(q.get_todo_keys() == [])
@@ -22,7 +22,7 @@ def test_push_pop():
 
 
 def test_move_key():
-    q = RedisQueue('test:demo', redis_config={})
+    q = RedisQueue('test:demo', redis_uri={})
     time.sleep(random.random())
     q.reset()
     q.push_key('key1')
@@ -47,7 +47,7 @@ def test_move_key():
 
 
 def test_done():
-    q = RedisQueue('test:demo', redis_config={})
+    q = RedisQueue('test:demo', redis_uri={})
     time.sleep(random.random())
     q.reset()
     q.push_key('key1')
@@ -66,7 +66,7 @@ def test_done():
 
 
 def test_error():
-    q = RedisQueue('test:demo', redis_config={})
+    q = RedisQueue('test:demo', redis_uri={})
     time.sleep(random.random())
     q.reset()
     q.push_key('key1')
@@ -85,7 +85,7 @@ def test_error():
 
 
 def test_doing_to_todo():
-    q = RedisQueue('test:demo', redis_config={})
+    q = RedisQueue('test:demo', redis_uri={})
     time.sleep(random.random())
     q.reset()
     q.push_key('key1')
@@ -102,7 +102,7 @@ def test_doing_to_todo():
 
 
 def test_doing_to_null():
-    q = RedisQueue('test:demo', redis_config={})
+    q = RedisQueue('test:demo', redis_uri={})
     time.sleep(random.random())
     q.reset()
     q.push_key('key1')
@@ -119,7 +119,7 @@ def test_doing_to_null():
 
 
 def test_5():
-    q = RedisQueue('test:demo', redis_config={})
+    q = RedisQueue('test:demo', redis_uri={})
     time.sleep(random.random())
     q.reset()
     q.push_key('key1')
@@ -138,7 +138,7 @@ def test_5():
 
 
 def test_6():
-    q = RedisQueue('test:demo', redis_config={})
+    q = RedisQueue('test:demo', redis_uri={})
     time.sleep(random.random())
     q.reset()
     q.push_key('key1')

@@ -1,6 +1,7 @@
 # coding: utf8
 import redis
 from .base import BaseQueue
+from .utils import parse_redis_uri
 
 
 class RedisQueue(BaseQueue):
@@ -30,7 +31,7 @@ class RedisQueue(BaseQueue):
 
     此处还可以记录 每个error-key的重试情况，每个key最多可重试多少次(redis汇总后的次数)
     '''
-    def __init__(self, queue_id, config):
+    def __init__(self, queue_id, redis_uri):
         '''
         # redis://user:password@localhost:port/0
         # redis://localhost:port/0
@@ -40,13 +41,18 @@ class RedisQueue(BaseQueue):
         self._done_rkey = queue_id + ':done'
         self._error_rkey = queue_id + ':error'
         self._null_rkey = queue_id + ':null'
+        redis_uri = redis_uri or {}
+        if isinstance(redis_uri, str):
+            scheme, password, host, port, db = parse_redis_uri(redis_uri)
+        else:
+            config = redis_uri
+            host=config.get('host', 'localhost')
+            port=config.get('port', 6379)
+            password=config.get('password', None)
+            db=config.get('db', 0)
         pool = redis.ConnectionPool(
-            host=config.get('host', 'localhost'),
-            port=config.get('port', 6379),
-            password=config.get('password', None),
-            db=config.get('db', 0),
-            decode_responses=True
-        )
+            host=host, port=port, password=password, 
+            db=db, decode_responses=True)
         self.redis = redis.Redis(connection_pool=pool)
 
     def reset(self, todo=True, doing=True, done=True, error=True, null=True):
