@@ -45,3 +45,6 @@ worker = scheduled.Worker(queue, fetcher=fetcher, pipelines=[])
 err = worker.run()
 print('errno', err)
 ```
+
+## ChangeLog
+    * [@2020-10-26 18:35:12] logbook -> logging
