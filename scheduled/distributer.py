@@ -82,7 +82,7 @@ class Distributer(object):
                 # self.logger.debug('Inserted: %d: key: %s' % (n_inserted + 1, run_key))
                 self.queue.push_key(key)
                 n_inserted += 1
-                self.logger.info('Inserted: %d: key: %s' % (n_inserted, key))
+                self.logger.debug('Inserted: %d: key: %s' % (n_inserted, key))
 
                 if self.yield_interval > 0:
                     time.sleep(self.yield_interval)
