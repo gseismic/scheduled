@@ -1,7 +1,5 @@
 import time
 import logging
-# import uuid
-# from .logger import get_logger
 
 
 _logger = logging.getLogger(__name__)
