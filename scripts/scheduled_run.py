@@ -9,6 +9,9 @@ from configparser import ConfigParser
 from scheduled.utils import yaml_config_logging
 from scheduled.runs import get_distributer, get_worker
 
+# add path
+sys.path.append(os.getcwd())
+
 
 DEFAULT_CHECK_INTERVAL = 5
 DEFAULT_WORKER_CONFIG_FILE = 'worker.json'
