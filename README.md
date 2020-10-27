@@ -48,3 +48,4 @@ print('errno', err)
 
 ## ChangeLog
     * [@2020-10-26 18:35:12] logbook -> logging
+    * [@2020-10-27 11:53:46] added: scripts
