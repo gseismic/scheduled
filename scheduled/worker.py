@@ -1,11 +1,8 @@
 import time
 import enum
 import traceback
-import logging
-# from .logger import get_logger
+from .logger import worker_log
 
-
-_logger = logging.getLogger(__name__)
 
 class WorkerState(enum.IntEnum):
     NotStarted = -1
@@ -26,7 +23,7 @@ class Worker(object):
         self.fetcher = fetcher
         self.pipelines = pipelines
         self.config = config or {}
-        self.logger = logger or _logger
+        self.logger = logger or worker_log
 
         # self.run_mode = self.config.get('run_mode', 'once')
         self.recheck_count = self.config.get('recheck_count', 3)
@@ -87,11 +84,16 @@ class Worker(object):
 
             errno, msg = 0, None
             try:
-                data, meta = self.fetcher.fetch(key)
-                meta = meta or {}
+                self.fetcher.before_fetch(key)
+                data, metadata = self.fetcher.fetch(key)
+                self.fetcher.after_fetch(key, data, metadata)
+                metadata = metadata or {}
+
                 if data is not None:
                     for pipeline in self.pipelines:
-                        data, meta = pipeline.process(key, data, meta)
+                        pipeline.before_process(key, data, metadata)
+                        data, metadata = pipeline.process(key, data, metadata)
+                        pipeline.after_process(key, data, metadata)
                     errno, msg = 0, 'Success'
                     self.queue.doing_to_done(key, reverse=False)
                     self.logger.debug('Done: %s' % key)

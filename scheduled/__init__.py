@@ -2,7 +2,7 @@ from .queue import RedisQueue
 from .key_yielder import KeyYielder
 from .fetcher import Fetcher
 from .pipeline import Pipeline
-from .distributer import Distributer
+from .publisher import Publisher
 from .worker import Worker
 from .version import __version__
 from . import utils

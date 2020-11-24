@@ -1,12 +1,12 @@
 import os
 import json
-import logging
 import importlib
 from .queue import RedisQueue
-from .distributer import Distributer
+from .publisher import Publisher
 from .worker import Worker
-from .module_utils import join_module_path, split_moduleclass_path, get_module_and_attr 
+from .logger import publisher_log, worker_log
 from .module_utils import classname_to_configname
+from .module_utils import join_module_path, split_moduleclass_path, get_module_and_attr 
 
 
 def get_submodule_settings(project, name):
@@ -57,20 +57,20 @@ def get_redis_queue(config, default_redis_config_file):
     return queue
 
 
-def get_distributer(project, name, config_file, default_redis_config_file):
+def get_publisher(project, name, config_file, default_redis_config_file):
     if not os.path.exists(config_file):
         raise Exception('Config file not exists: %s' % config_file)
 
     with open(config_file) as f:
         config = json.load(f)
 
-    logger = logging.getLogger('distributer')
+    logger = publisher_log
     yielder_cls = get_class(project, name, 'KEY_YIELDER')
     key_yielder = yielder_cls(config=config['key_yielder'], logger=logger)
     queue = get_redis_queue(config, default_redis_config_file)
-    distributer = Distributer(queue=queue, key_yielder=key_yielder,
-                              config=config['distributer'], logger=logger)
-    return distributer
+    publisher = Publisher(queue=queue, key_yielder=key_yielder,
+                          config=config['publisher'], logger=logger)
+    return publisher
 
 
 def get_pipelines(project, name, pipe_config, logger):
@@ -105,7 +105,7 @@ def get_worker(project, name, config_file, default_redis_config_file):
     with open(config_file) as f:
         config = json.load(f)
 
-    logger = logging.getLogger('worker')
+    logger = worker_log
     fetcher = get_fetcher(project, name, config, logger)
     pipelines = get_pipelines(project, name, config['pipelines'], logger)
     queue = get_redis_queue(config, default_redis_config_file)

@@ -1,0 +1,1151 @@
+[2020-10-16 09:39:23.103640] INFO: main: Build connection socket ..
+[2020-10-16 09:39:23.105014] INFO: main: Connecting: tcp://121.89.202.46:5678 ..
+[2020-10-16 09:39:23.105353] INFO: main: Build connection socket ..
+[2020-10-16 09:39:23.105629] INFO: main: Connecting: tcp://106.54.201.205:5678 ..
+[2020-10-16 09:39:29.011431] INFO: main: run_scheduler ...
+[2020-10-16 09:39:29.011950] INFO: main: Running ...
+[2020-10-16 09:39:29.013562] NOTICE: main: Done keys: [[] ...]: num=0
+[2020-10-16 09:39:29.014510] NOTICE: main: Doing keys: set(), num=0
+[2020-10-16 09:39:29.015334] NOTICE: main: Error keys: [], num=0
+[2020-10-16 09:39:29.020968] NOTICE: main: TODO keys: [['S:SH900945', 'S:SH900938', 'S:SZ200706', 'S:SH900913', 'S:SH900948'] ...], num=4306
+[2020-10-16 09:39:29.021927] NOTICE: main: NULL keys: [], num=0
+[2020-10-16 09:39:29.022332] NOTICE: main: Move errror-key -> todo-key ...3 sec ...
+[2020-10-16 09:39:32.027329] INFO: main: Gen: 1: key: S:SZ000001
+[2020-10-16 09:39:37.033784] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 09:39:37.041929] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 72, in remote_send_recv
+    return self.remote_send_recv_v2(func, *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 93, in remote_send_recv_v2
+    raise Exception('Timeout')
+Exception: Timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 33, in fetch
+    cashflow = self.api.get_cashflow_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 13, in get_cashflow_statement
+    return self._get_report_of('CashFlow', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 45, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 76, in remote_send_recv
+    time.sleep(self.retry_sleep)
+NameError: name 'time' is not defined
+
+[2020-10-16 09:39:37.042523] ERROR: main: Error: code: -1: Key `S:SZ000001` pushed back, detail: name 'time' is not defined
+[2020-10-16 09:39:39.045832] INFO: main: Gen: 1: key: S:SZ000002
+[2020-10-16 09:39:39.844084] INFO: main: Build connection socket ..
+[2020-10-16 09:39:39.845030] INFO: main: Connecting: tcp://106.12.180.32:5678 ..
+[2020-10-16 09:39:41.097231] INFO: main: Key `S:SZ000002` pushed back, Stopped by user.
+[2020-10-16 09:39:41.098147] NOTICE: main: Done keys: [[] ...]: num=0
+[2020-10-16 09:39:41.098957] NOTICE: main: Doing keys: set(), num=0
+[2020-10-16 09:39:41.099822] NOTICE: main: Error keys: ['S:SZ000001'], num=1
+[2020-10-16 09:39:41.105147] NOTICE: main: TODO keys: [['S:SH900945', 'S:SH900938', 'S:SZ200706', 'S:SH900913', 'S:SH900948'] ...], num=4305
+[2020-10-16 09:39:41.105933] NOTICE: main: NULL keys: [], num=0
+[2020-10-16 10:12:56.230744] INFO: main: Build connection socket ..
+[2020-10-16 10:12:56.231239] INFO: main: Connecting: tcp://106.12.180.32:5678 ..
+[2020-10-16 10:12:56.231493] INFO: main: Build connection socket ..
+[2020-10-16 10:12:56.231752] INFO: main: Connecting: tcp://121.89.202.46:5678 ..
+[2020-10-16 10:13:01.237306] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:13:01.739191] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:13:02.280988] INFO: main: run_scheduler ...
+[2020-10-16 10:13:02.281426] INFO: main: Running ...
+[2020-10-16 10:13:02.283100] NOTICE: main: Done keys: [[] ...]: num=0
+[2020-10-16 10:13:02.283992] NOTICE: main: Doing keys: set(), num=0
+[2020-10-16 10:13:02.284761] NOTICE: main: Error keys: ['S:SZ000001'], num=1
+[2020-10-16 10:13:02.288882] NOTICE: main: TODO keys: [['S:SH900945', 'S:SH900938', 'S:SZ200706', 'S:SH900913', 'S:SH900948'] ...], num=4305
+[2020-10-16 10:13:02.289305] NOTICE: main: NULL keys: [], num=0
+[2020-10-16 10:13:02.289468] NOTICE: main: Move errror-key -> todo-key ...3 sec ...
+[2020-10-16 10:13:05.291648] INFO: main: Gen: 1: key: S:SZ000002
+[2020-10-16 10:13:05.292574] INFO: main: Build connection socket ..
+[2020-10-16 10:13:05.293651] INFO: main: Connecting: tcp://106.54.201.205:5678 ..
+[2020-10-16 10:13:13.627028] INFO: main: CheckSame:SZ000002:cashflow
+[2020-10-16 10:13:13.707646] INFO: main: CheckSame:SZ000002:balance
+[2020-10-16 10:13:13.765770] INFO: main: CheckSame:SZ000002:income
+[2020-10-16 10:13:15.772416] INFO: main: Gen: 2: key: S:SZ000003
+[2020-10-16 10:13:15.773993] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:13:18.248386] INFO: main: CheckSame:SZ000003:cashflow
+[2020-10-16 10:13:18.279367] INFO: main: CheckSame:SZ000003:income
+[2020-10-16 10:13:20.284891] INFO: main: Gen: 3: key: S:SZ000004
+[2020-10-16 10:13:22.804649] INFO: main: CheckSame:SZ000004:cashflow
+[2020-10-16 10:13:22.852223] INFO: main: CheckSame:SZ000004:income
+[2020-10-16 10:13:24.858021] INFO: main: Gen: 4: key: S:SZ000005
+[2020-10-16 10:13:24.859576] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:13:27.520100] INFO: main: CheckSame:SZ000005:cashflow
+[2020-10-16 10:13:27.536057] INFO: main: CheckSame:SZ000005:balance
+[2020-10-16 10:13:27.548753] INFO: main: CheckSame:SZ000005:income
+[2020-10-16 10:13:29.554663] INFO: main: Gen: 5: key: S:SZ000006
+[2020-10-16 10:13:31.900559] INFO: main: CheckSame:SZ000006:cashflow
+[2020-10-16 10:13:31.921332] INFO: main: CheckSame:SZ000006:balance
+[2020-10-16 10:13:31.939003] INFO: main: CheckSame:SZ000006:income
+[2020-10-16 10:13:33.945209] INFO: main: Gen: 6: key: S:SZ000007
+[2020-10-16 10:13:36.405164] INFO: main: CheckSame:SZ000007:cashflow
+[2020-10-16 10:13:36.420316] INFO: main: CheckSame:SZ000007:balance
+[2020-10-16 10:13:36.434623] INFO: main: CheckSame:SZ000007:income
+[2020-10-16 10:13:38.441273] INFO: main: Gen: 7: key: S:SZ000008
+[2020-10-16 10:13:40.776654] INFO: main: CheckSame:SZ000008:cashflow
+[2020-10-16 10:13:40.787600] INFO: main: CheckSame:SZ000008:balance
+[2020-10-16 10:13:40.803680] INFO: main: CheckSame:SZ000008:income
+[2020-10-16 10:13:42.809995] INFO: main: Gen: 8: key: S:SZ000009
+[2020-10-16 10:13:43.852358] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:13:44.354067] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:13:44.855561] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:13:45.358013] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 37, in fetch
+    balance = self.api.get_balance_sheet(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 16, in get_balance_sheet
+    return self._get_report_of('BalanceSheet', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:13:45.359570] ERROR: main: Error: code: -1: Key `S:SZ000009` pushed back, detail: RetryFailure
+[2020-10-16 10:13:47.362398] INFO: main: Gen: 8: key: S:SZ000010
+[2020-10-16 10:13:47.363031] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:13:49.882714] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:13:50.384439] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:13:51.961214] INFO: main: CheckSame:SZ000010:cashflow
+[2020-10-16 10:13:51.970503] INFO: main: CheckSame:SZ000010:balance
+[2020-10-16 10:13:51.987406] INFO: main: CheckSame:SZ000010:income
+[2020-10-16 10:13:53.990481] INFO: main: Gen: 9: key: S:SZ000011
+[2020-10-16 10:13:55.069479] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:13:57.524462] INFO: main: CheckSame:SZ000011:cashflow
+[2020-10-16 10:13:57.534673] INFO: main: CheckSame:SZ000011:balance
+[2020-10-16 10:13:57.541811] INFO: main: CheckSame:SZ000011:income
+[2020-10-16 10:13:59.546971] INFO: main: Gen: 10: key: S:SZ000012
+[2020-10-16 10:14:00.270101] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:02.820802] INFO: main: CheckSame:SZ000012:cashflow
+[2020-10-16 10:14:02.843451] INFO: main: CheckSame:SZ000012:balance
+[2020-10-16 10:14:02.871182] INFO: main: CheckSame:SZ000012:income
+[2020-10-16 10:14:04.877556] INFO: main: Gen: 11: key: S:SZ000013
+[2020-10-16 10:14:04.879167] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:05.964003] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:06.465799] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:14:06.967651] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:14:07.469064] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 37, in fetch
+    balance = self.api.get_balance_sheet(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 16, in get_balance_sheet
+    return self._get_report_of('BalanceSheet', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:14:07.470568] ERROR: main: Error: code: -1: Key `S:SZ000013` pushed back, detail: RetryFailure
+[2020-10-16 10:14:09.473979] INFO: main: Gen: 11: key: S:SZ000014
+[2020-10-16 10:14:13.115209] INFO: main: CheckSame:SZ000014:cashflow
+[2020-10-16 10:14:13.139415] INFO: main: CheckSame:SZ000014:balance
+[2020-10-16 10:14:13.155660] INFO: main: CheckSame:SZ000014:income
+[2020-10-16 10:14:15.161917] INFO: main: Gen: 12: key: S:SZ000015
+[2020-10-16 10:14:15.163512] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:15.665205] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:14:16.166963] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:14:16.668324] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 33, in fetch
+    cashflow = self.api.get_cashflow_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 13, in get_cashflow_statement
+    return self._get_report_of('CashFlow', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:14:16.669731] ERROR: main: Error: code: -1: Key `S:SZ000015` pushed back, detail: RetryFailure
+[2020-10-16 10:14:18.673120] INFO: main: Gen: 12: key: S:SZ000016
+[2020-10-16 10:14:19.622301] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:22.845047] INFO: main: CheckSame:SZ000016:cashflow
+[2020-10-16 10:14:22.864317] INFO: main: CheckSame:SZ000016:balance
+[2020-10-16 10:14:22.872540] INFO: main: CheckSame:SZ000016:income
+[2020-10-16 10:14:24.878142] INFO: main: Gen: 13: key: S:SZ000017
+[2020-10-16 10:14:27.362466] INFO: main: CheckSame:SZ000017:cashflow
+[2020-10-16 10:14:27.380299] INFO: main: CheckSame:SZ000017:balance
+[2020-10-16 10:14:27.391314] INFO: main: CheckSame:SZ000017:income
+[2020-10-16 10:14:29.397246] INFO: main: Gen: 14: key: S:SZ000018
+[2020-10-16 10:14:31.684582] INFO: main: CheckSame:SZ000018:cashflow
+[2020-10-16 10:14:31.712301] INFO: main: CheckSame:SZ000018:balance
+[2020-10-16 10:14:31.723283] INFO: main: CheckSame:SZ000018:income
+[2020-10-16 10:14:33.729542] INFO: main: Gen: 15: key: S:SZ000019
+[2020-10-16 10:14:36.335669] INFO: main: CheckSame:SZ000019:cashflow
+[2020-10-16 10:14:36.366251] INFO: main: CheckSame:SZ000019:balance
+[2020-10-16 10:14:36.377229] INFO: main: CheckSame:SZ000019:income
+[2020-10-16 10:14:38.383394] INFO: main: Gen: 16: key: S:SZ000020
+[2020-10-16 10:14:38.384714] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:39.496717] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:41.151009] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:41.652537] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:14:42.153826] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:14:42.655031] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:14:42.656890] ERROR: main: Error: code: -1: Key `S:SZ000020` pushed back, detail: RetryFailure
+[2020-10-16 10:14:44.660478] INFO: main: Gen: 16: key: S:SZ000021
+[2020-10-16 10:14:47.097448] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:48.771190] INFO: main: CheckSame:SZ000021:cashflow
+[2020-10-16 10:14:48.849956] INFO: main: CheckSame:SZ000021:balance
+[2020-10-16 10:14:48.889658] INFO: main: CheckSame:SZ000021:income
+[2020-10-16 10:14:50.896372] INFO: main: Gen: 17: key: S:SZ000023
+[2020-10-16 10:14:50.898056] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:51.399796] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:14:52.774734] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:54.985410] INFO: main: CheckSame:SZ000023:cashflow
+[2020-10-16 10:14:55.022691] INFO: main: CheckSame:SZ000023:balance
+[2020-10-16 10:14:55.046561] INFO: main: CheckSame:SZ000023:income
+[2020-10-16 10:14:57.052445] INFO: main: Gen: 18: key: S:SZ000024
+[2020-10-16 10:14:58.609356] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:14:59.864060] INFO: main: CheckSame:SZ000024:cashflow
+[2020-10-16 10:14:59.929185] INFO: main: CheckSame:SZ000024:balance
+[2020-10-16 10:14:59.938666] INFO: main: CheckSame:SZ000024:income
+[2020-10-16 10:15:01.944365] INFO: main: Gen: 19: key: S:SZ000025
+[2020-10-16 10:15:01.946013] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:04.578570] INFO: main: CheckSame:SZ000025:cashflow
+[2020-10-16 10:15:04.593998] INFO: main: CheckSame:SZ000025:balance
+[2020-10-16 10:15:04.606843] INFO: main: CheckSame:SZ000025:income
+[2020-10-16 10:15:06.610856] INFO: main: Gen: 20: key: S:SZ000026
+[2020-10-16 10:15:08.344212] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:09.575474] INFO: main: CheckSame:SZ000026:cashflow
+[2020-10-16 10:15:09.622294] INFO: main: CheckSame:SZ000026:balance
+[2020-10-16 10:15:09.642553] INFO: main: CheckSame:SZ000026:income
+[2020-10-16 10:15:11.648579] INFO: main: Gen: 21: key: S:SZ000027
+[2020-10-16 10:15:11.649644] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:12.151077] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:15:15.067748] INFO: main: CheckSame:SZ000027:cashflow
+[2020-10-16 10:15:15.133471] INFO: main: CheckSame:SZ000027:balance
+[2020-10-16 10:15:15.154509] INFO: main: CheckSame:SZ000027:income
+[2020-10-16 10:15:17.160741] INFO: main: Gen: 22: key: S:SZ000028
+[2020-10-16 10:15:17.162400] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:20.243248] INFO: main: CheckSame:SZ000028:cashflow
+[2020-10-16 10:15:20.258676] INFO: main: CheckSame:SZ000028:balance
+[2020-10-16 10:15:20.274420] INFO: main: CheckSame:SZ000028:income
+[2020-10-16 10:15:22.279972] INFO: main: Gen: 23: key: S:SZ000029
+[2020-10-16 10:15:22.281537] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:23.434145] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:23.935431] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:15:24.436996] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:15:24.938386] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 37, in fetch
+    balance = self.api.get_balance_sheet(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 16, in get_balance_sheet
+    return self._get_report_of('BalanceSheet', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:15:24.939977] ERROR: main: Error: code: -1: Key `S:SZ000029` pushed back, detail: RetryFailure
+[2020-10-16 10:15:26.943334] INFO: main: Gen: 23: key: S:SZ000030
+[2020-10-16 10:15:26.944622] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:27.446403] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:15:28.699845] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:30.274377] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:31.883341] INFO: main: CheckSame:SZ000030:cashflow
+[2020-10-16 10:15:31.947684] INFO: main: CheckSame:SZ000030:balance
+[2020-10-16 10:15:31.977556] INFO: main: CheckSame:SZ000030:income
+[2020-10-16 10:15:33.983163] INFO: main: Gen: 24: key: S:SZ000031
+[2020-10-16 10:15:35.078129] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:37.403717] INFO: main: CheckSame:SZ000031:cashflow
+[2020-10-16 10:15:37.442083] INFO: main: CheckSame:SZ000031:balance
+[2020-10-16 10:15:37.470082] INFO: main: CheckSame:SZ000031:income
+[2020-10-16 10:15:39.474802] INFO: main: Gen: 25: key: S:SZ000032
+[2020-10-16 10:15:39.476090] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:39.977818] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:15:42.576522] INFO: main: CheckSame:SZ000032:cashflow
+[2020-10-16 10:15:42.637499] INFO: main: CheckSame:SZ000032:balance
+[2020-10-16 10:15:42.644015] INFO: main: CheckSame:SZ000032:income
+[2020-10-16 10:15:44.649129] INFO: main: Gen: 26: key: S:SZ000033
+[2020-10-16 10:15:44.650729] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:45.953512] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:47.926974] INFO: main: CheckSame:SZ000033:cashflow
+[2020-10-16 10:15:47.953970] INFO: main: CheckSame:SZ000033:balance
+[2020-10-16 10:15:47.962610] INFO: main: CheckSame:SZ000033:income
+[2020-10-16 10:15:49.968403] INFO: main: Gen: 27: key: S:SZ000034
+[2020-10-16 10:15:52.790510] INFO: main: CheckSame:SZ000034:cashflow
+[2020-10-16 10:15:52.848532] INFO: main: CheckSame:SZ000034:balance
+[2020-10-16 10:15:52.854790] INFO: main: CheckSame:SZ000034:income
+[2020-10-16 10:15:54.861217] INFO: main: Gen: 28: key: S:SZ000035
+[2020-10-16 10:15:57.144555] INFO: main: CheckSame:SZ000035:cashflow
+[2020-10-16 10:15:57.155084] INFO: main: CheckSame:SZ000035:balance
+[2020-10-16 10:15:57.164723] INFO: main: CheckSame:SZ000035:income
+[2020-10-16 10:15:59.170222] INFO: main: Gen: 29: key: S:SZ000036
+[2020-10-16 10:15:59.171608] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:15:59.673370] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:16:00.175202] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:16:00.676363] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 33, in fetch
+    cashflow = self.api.get_cashflow_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 13, in get_cashflow_statement
+    return self._get_report_of('CashFlow', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:16:00.677246] ERROR: main: Error: code: -1: Key `S:SZ000036` pushed back, detail: RetryFailure
+[2020-10-16 10:16:02.679432] INFO: main: Gen: 29: key: S:SZ000037
+[2020-10-16 10:16:03.635013] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:05.036696] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:06.637157] INFO: main: CheckSame:SZ000037:cashflow
+[2020-10-16 10:16:06.695456] INFO: main: CheckSame:SZ000037:balance
+[2020-10-16 10:16:06.711620] INFO: main: CheckSame:SZ000037:income
+[2020-10-16 10:16:08.717321] INFO: main: Gen: 30: key: S:SZ000038
+[2020-10-16 10:16:10.929645] INFO: main: CheckSame:SZ000038:cashflow
+[2020-10-16 10:16:10.945395] INFO: main: CheckSame:SZ000038:balance
+[2020-10-16 10:16:10.953893] INFO: main: CheckSame:SZ000038:income
+[2020-10-16 10:16:12.959802] INFO: main: Gen: 31: key: S:SZ000039
+[2020-10-16 10:16:14.165464] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:15.681914] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:16.183380] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:16:17.669559] INFO: main: CheckSame:SZ000039:cashflow
+[2020-10-16 10:16:17.729302] INFO: main: CheckSame:SZ000039:balance
+[2020-10-16 10:16:17.745533] INFO: main: CheckSame:SZ000039:income
+[2020-10-16 10:16:19.751290] INFO: main: Gen: 32: key: S:SZ000040
+[2020-10-16 10:16:20.847212] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:23.069190] INFO: main: CheckSame:SZ000040:cashflow
+[2020-10-16 10:16:23.096734] INFO: main: CheckSame:SZ000040:balance
+[2020-10-16 10:16:23.137077] INFO: main: CheckSame:SZ000040:income
+[2020-10-16 10:16:25.143357] INFO: main: Gen: 33: key: S:SZ000042
+[2020-10-16 10:16:27.338020] INFO: main: CheckSame:SZ000042:cashflow
+[2020-10-16 10:16:27.372519] INFO: main: CheckSame:SZ000042:balance
+[2020-10-16 10:16:27.395576] INFO: main: CheckSame:SZ000042:income
+[2020-10-16 10:16:29.400843] INFO: main: Gen: 34: key: S:SZ000045
+[2020-10-16 10:16:29.402394] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:32.277455] INFO: main: CheckSame:SZ000045:cashflow
+[2020-10-16 10:16:32.303656] INFO: main: CheckSame:SZ000045:balance
+[2020-10-16 10:16:32.316785] INFO: main: CheckSame:SZ000045:income
+[2020-10-16 10:16:34.322109] INFO: main: Gen: 35: key: S:SZ000046
+[2020-10-16 10:16:36.542272] INFO: main: CheckSame:SZ000046:cashflow
+[2020-10-16 10:16:36.582823] INFO: main: CheckSame:SZ000046:balance
+[2020-10-16 10:16:36.599598] INFO: main: CheckSame:SZ000046:income
+[2020-10-16 10:16:38.605692] INFO: main: Gen: 36: key: S:SZ000047
+[2020-10-16 10:16:39.273239] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:40.765261] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:41.863682] INFO: main: CheckSame:SZ000047:cashflow
+[2020-10-16 10:16:41.881310] INFO: main: CheckSame:SZ000047:balance
+[2020-10-16 10:16:41.897508] INFO: main: CheckSame:SZ000047:income
+[2020-10-16 10:16:43.903247] INFO: main: Gen: 37: key: S:SZ000048
+[2020-10-16 10:16:46.263310] INFO: main: CheckSame:SZ000048:cashflow
+[2020-10-16 10:16:46.271205] INFO: main: CheckSame:SZ000048:balance
+[2020-10-16 10:16:46.277411] INFO: main: CheckSame:SZ000048:income
+[2020-10-16 10:16:48.282327] INFO: main: Gen: 38: key: S:SZ000049
+[2020-10-16 10:16:50.770890] INFO: main: CheckSame:SZ000049:cashflow
+[2020-10-16 10:16:50.784266] INFO: main: CheckSame:SZ000049:balance
+[2020-10-16 10:16:50.792041] INFO: main: CheckSame:SZ000049:income
+[2020-10-16 10:16:52.797325] INFO: main: Gen: 39: key: S:SZ000050
+[2020-10-16 10:16:53.775840] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:16:55.860780] INFO: main: CheckSame:SZ000050:cashflow
+[2020-10-16 10:16:55.902727] INFO: main: CheckSame:SZ000050:balance
+[2020-10-16 10:16:55.909715] INFO: main: CheckSame:SZ000050:income
+[2020-10-16 10:16:57.915574] INFO: main: Gen: 40: key: S:SZ000055
+[2020-10-16 10:17:00.573069] INFO: main: CheckSame:SZ000055:cashflow
+[2020-10-16 10:17:00.597805] INFO: main: CheckSame:SZ000055:balance
+[2020-10-16 10:17:00.611839] INFO: main: CheckSame:SZ000055:income
+[2020-10-16 10:17:02.618551] INFO: main: Gen: 41: key: S:SZ000056
+[2020-10-16 10:17:03.574098] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:05.995640] INFO: main: CheckSame:SZ000056:cashflow
+[2020-10-16 10:17:06.066655] INFO: main: CheckSame:SZ000056:balance
+[2020-10-16 10:17:06.121519] INFO: main: CheckSame:SZ000056:income
+[2020-10-16 10:17:08.126814] INFO: main: Gen: 42: key: S:SZ000058
+[2020-10-16 10:17:10.499378] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:12.115205] INFO: main: CheckSame:SZ000058:cashflow
+[2020-10-16 10:17:12.131785] INFO: main: CheckSame:SZ000058:balance
+[2020-10-16 10:17:12.139217] INFO: main: CheckSame:SZ000058:income
+[2020-10-16 10:17:14.145114] INFO: main: Gen: 43: key: S:SZ000059
+[2020-10-16 10:17:16.659113] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:18.326921] INFO: main: CheckSame:SZ000059:cashflow
+[2020-10-16 10:17:18.340191] INFO: main: CheckSame:SZ000059:balance
+[2020-10-16 10:17:18.354097] INFO: main: CheckSame:SZ000059:income
+[2020-10-16 10:17:20.360479] INFO: main: Gen: 44: key: S:SZ000060
+[2020-10-16 10:17:23.029939] INFO: main: CheckSame:SZ000060:cashflow
+[2020-10-16 10:17:23.043857] INFO: main: CheckSame:SZ000060:balance
+[2020-10-16 10:17:23.061697] INFO: main: CheckSame:SZ000060:income
+[2020-10-16 10:17:25.066879] INFO: main: Gen: 45: key: S:SZ000061
+[2020-10-16 10:17:27.746305] INFO: main: CheckSame:SZ000061:cashflow
+[2020-10-16 10:17:27.779681] INFO: main: CheckSame:SZ000061:balance
+[2020-10-16 10:17:27.806270] INFO: main: CheckSame:SZ000061:income
+[2020-10-16 10:17:29.811060] INFO: main: Gen: 46: key: S:SZ000062
+[2020-10-16 10:17:31.896981] INFO: main: CheckSame:SZ000062:cashflow
+[2020-10-16 10:17:31.926014] INFO: main: CheckSame:SZ000062:balance
+[2020-10-16 10:17:31.930916] INFO: main: CheckSame:SZ000062:income
+[2020-10-16 10:17:33.935457] INFO: main: Gen: 47: key: S:SZ000063
+[2020-10-16 10:17:33.937010] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:34.438647] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:17:35.856830] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:38.644528] INFO: main: CheckSame:SZ000063:cashflow
+[2020-10-16 10:17:38.674798] INFO: main: CheckSame:SZ000063:balance
+[2020-10-16 10:17:38.692920] INFO: main: CheckSame:SZ000063:income
+[2020-10-16 10:17:40.698781] INFO: main: Gen: 48: key: S:SZ000065
+[2020-10-16 10:17:40.700118] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:41.201814] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:17:42.441491] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:44.945277] INFO: main: CheckSame:SZ000065:cashflow
+[2020-10-16 10:17:44.958159] INFO: main: CheckSame:SZ000065:balance
+[2020-10-16 10:17:44.972503] INFO: main: CheckSame:SZ000065:income
+[2020-10-16 10:17:46.978195] INFO: main: Gen: 49: key: S:SZ000066
+[2020-10-16 10:17:47.990420] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:48.492221] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:17:48.993962] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:17:49.495312] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 37, in fetch
+    balance = self.api.get_balance_sheet(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 16, in get_balance_sheet
+    return self._get_report_of('BalanceSheet', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:17:49.496966] ERROR: main: Error: code: -1: Key `S:SZ000066` pushed back, detail: RetryFailure
+[2020-10-16 10:17:51.500499] INFO: main: Gen: 49: key: S:SZ000068
+[2020-10-16 10:17:51.501842] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:17:52.003587] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:17:55.226510] INFO: main: CheckSame:SZ000068:cashflow
+[2020-10-16 10:17:55.271342] INFO: main: CheckSame:SZ000068:balance
+[2020-10-16 10:17:55.287965] INFO: main: CheckSame:SZ000068:income
+[2020-10-16 10:17:57.293934] INFO: main: Gen: 50: key: S:SZ000069
+[2020-10-16 10:18:01.562748] INFO: main: CheckSame:SZ000069:cashflow
+[2020-10-16 10:18:01.585203] INFO: main: CheckSame:SZ000069:balance
+[2020-10-16 10:18:01.600583] INFO: main: CheckSame:SZ000069:income
+[2020-10-16 10:18:03.606095] INFO: main: Gen: 51: key: S:SZ000070
+[2020-10-16 10:18:05.851787] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:06.353513] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:18:07.832762] INFO: main: CheckSame:SZ000070:cashflow
+[2020-10-16 10:18:07.860098] INFO: main: CheckSame:SZ000070:balance
+[2020-10-16 10:18:07.879308] INFO: main: CheckSame:SZ000070:income
+[2020-10-16 10:18:09.884320] INFO: main: Gen: 52: key: S:SZ000078
+[2020-10-16 10:18:09.884869] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:10.386176] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:18:10.887784] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:18:11.388815] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 33, in fetch
+    cashflow = self.api.get_cashflow_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 13, in get_cashflow_statement
+    return self._get_report_of('CashFlow', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:18:11.389407] ERROR: main: Error: code: -1: Key `S:SZ000078` pushed back, detail: RetryFailure
+[2020-10-16 10:18:13.390865] INFO: main: Gen: 52: key: S:SZ000088
+[2020-10-16 10:18:14.534057] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:16.966861] INFO: main: CheckSame:SZ000088:cashflow
+[2020-10-16 10:18:16.978535] INFO: main: CheckSame:SZ000088:balance
+[2020-10-16 10:18:16.985465] INFO: main: CheckSame:SZ000088:income
+[2020-10-16 10:18:18.990662] INFO: main: Gen: 53: key: S:SZ000089
+[2020-10-16 10:18:18.991988] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:21.829277] INFO: main: CheckSame:SZ000089:cashflow
+[2020-10-16 10:18:21.859223] INFO: main: CheckSame:SZ000089:balance
+[2020-10-16 10:18:21.868677] INFO: main: CheckSame:SZ000089:income
+[2020-10-16 10:18:23.874089] INFO: main: Gen: 54: key: S:SZ000090
+[2020-10-16 10:18:24.521813] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:26.191245] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:26.692890] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:18:27.194645] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:18:27.696071] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:18:27.697914] ERROR: main: Error: code: -1: Key `S:SZ000090` pushed back, detail: RetryFailure
+[2020-10-16 10:18:29.701418] INFO: main: Gen: 54: key: S:SZ000096
+[2020-10-16 10:18:30.343626] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:31.940686] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:32.442375] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:18:32.944050] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:18:33.445388] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:18:33.447332] ERROR: main: Error: code: -1: Key `S:SZ000096` pushed back, detail: RetryFailure
+[2020-10-16 10:18:35.450874] INFO: main: Gen: 54: key: S:SZ000099
+[2020-10-16 10:18:37.332171] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:38.720618] INFO: main: CheckSame:SZ000099:cashflow
+[2020-10-16 10:18:38.736929] INFO: main: CheckSame:SZ000099:balance
+[2020-10-16 10:18:38.744967] INFO: main: CheckSame:SZ000099:income
+[2020-10-16 10:18:40.750325] INFO: main: Gen: 55: key: S:SZ000100
+[2020-10-16 10:18:40.751771] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:42.797033] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:43.989260] INFO: main: CheckSame:SZ000100:cashflow
+[2020-10-16 10:18:43.998012] INFO: main: CheckSame:SZ000100:balance
+[2020-10-16 10:18:44.008132] INFO: main: CheckSame:SZ000100:income
+[2020-10-16 10:18:46.013079] INFO: main: Gen: 56: key: S:SZ000150
+[2020-10-16 10:18:46.655476] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:48.468115] INFO: main: CheckSame:SZ000150:cashflow
+[2020-10-16 10:18:48.487292] INFO: main: CheckSame:SZ000150:balance
+[2020-10-16 10:18:48.529026] INFO: main: CheckSame:SZ000150:income
+[2020-10-16 10:18:50.534693] INFO: main: Gen: 57: key: S:SZ000151
+[2020-10-16 10:18:50.536324] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:51.863564] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:52.365301] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:18:52.867128] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:18:53.368508] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 37, in fetch
+    balance = self.api.get_balance_sheet(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 16, in get_balance_sheet
+    return self._get_report_of('BalanceSheet', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:18:53.370151] ERROR: main: Error: code: -1: Key `S:SZ000151` pushed back, detail: RetryFailure
+[2020-10-16 10:18:55.373541] INFO: main: Gen: 57: key: S:SZ000153
+[2020-10-16 10:18:56.121883] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:18:58.676061] INFO: main: CheckSame:SZ000153:cashflow
+[2020-10-16 10:18:58.690044] INFO: main: CheckSame:SZ000153:balance
+[2020-10-16 10:18:58.702433] INFO: main: CheckSame:SZ000153:income
+[2020-10-16 10:19:00.707370] INFO: main: Gen: 58: key: S:SZ000155
+[2020-10-16 10:19:03.491730] INFO: main: CheckSame:SZ000155:cashflow
+[2020-10-16 10:19:03.506764] INFO: main: CheckSame:SZ000155:balance
+[2020-10-16 10:19:03.516851] INFO: main: CheckSame:SZ000155:income
+[2020-10-16 10:19:05.522231] INFO: main: Gen: 59: key: S:SZ000156
+[2020-10-16 10:19:05.523764] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:06.688042] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:07.189852] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:19:09.082711] INFO: main: CheckSame:SZ000156:cashflow
+[2020-10-16 10:19:09.095214] INFO: main: CheckSame:SZ000156:balance
+[2020-10-16 10:19:09.108701] INFO: main: CheckSame:SZ000156:income
+[2020-10-16 10:19:11.114643] INFO: main: Gen: 60: key: S:SZ000157
+[2020-10-16 10:19:13.575666] INFO: main: CheckSame:SZ000157:cashflow
+[2020-10-16 10:19:13.596647] INFO: main: CheckSame:SZ000157:balance
+[2020-10-16 10:19:13.617921] INFO: main: CheckSame:SZ000157:income
+[2020-10-16 10:19:15.623870] INFO: main: Gen: 61: key: S:SZ000158
+[2020-10-16 10:19:15.625247] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:16.126595] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:19:16.628383] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:19:17.129739] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 33, in fetch
+    cashflow = self.api.get_cashflow_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 13, in get_cashflow_statement
+    return self._get_report_of('CashFlow', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:19:17.130960] ERROR: main: Error: code: -1: Key `S:SZ000158` pushed back, detail: RetryFailure
+[2020-10-16 10:19:19.134026] INFO: main: Gen: 61: key: S:SZ000159
+[2020-10-16 10:19:21.037069] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:22.643561] INFO: main: CheckSame:SZ000159:cashflow
+[2020-10-16 10:19:22.674631] INFO: main: CheckSame:SZ000159:balance
+[2020-10-16 10:19:22.692389] INFO: main: CheckSame:SZ000159:income
+[2020-10-16 10:19:24.698319] INFO: main: Gen: 62: key: S:SZ000166
+[2020-10-16 10:19:24.699749] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:25.201419] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:19:26.978510] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:28.113385] INFO: main: CheckSame:SZ000166:cashflow
+[2020-10-16 10:19:28.143461] INFO: main: CheckSame:SZ000166:balance
+[2020-10-16 10:19:28.150988] INFO: main: CheckSame:SZ000166:income
+[2020-10-16 10:19:30.154808] INFO: main: Gen: 63: key: S:SZ000301
+[2020-10-16 10:19:34.480492] INFO: main: Gen: 64: key: S:SZ000333
+[2020-10-16 10:19:34.482158] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:34.983575] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:19:35.485341] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:19:35.986716] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 33, in fetch
+    cashflow = self.api.get_cashflow_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 13, in get_cashflow_statement
+    return self._get_report_of('CashFlow', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:19:35.988101] ERROR: main: Error: code: -1: Key `S:SZ000333` pushed back, detail: RetryFailure
+[2020-10-16 10:19:37.991284] INFO: main: Gen: 64: key: S:SZ000338
+[2020-10-16 10:19:38.950208] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:40.509308] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:42.131780] INFO: main: CheckSame:SZ000338:cashflow
+[2020-10-16 10:19:42.147495] INFO: main: CheckSame:SZ000338:balance
+[2020-10-16 10:19:42.157932] INFO: main: CheckSame:SZ000338:income
+[2020-10-16 10:19:44.163310] INFO: main: Gen: 65: key: S:SZ000400
+[2020-10-16 10:19:44.164620] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:46.358062] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:47.479360] INFO: main: CheckSame:SZ000400:cashflow
+[2020-10-16 10:19:47.495857] INFO: main: CheckSame:SZ000400:balance
+[2020-10-16 10:19:47.509164] INFO: main: CheckSame:SZ000400:income
+[2020-10-16 10:19:49.514835] INFO: main: Gen: 66: key: S:SZ000401
+[2020-10-16 10:19:49.516213] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:50.017959] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:19:52.939531] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:53.441136] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:19:53.942874] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:19:54.444247] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:19:54.446333] ERROR: main: Error: code: -1: Key `S:SZ000401` pushed back, detail: RetryFailure
+[2020-10-16 10:19:56.450051] INFO: main: Gen: 66: key: S:SZ000402
+[2020-10-16 10:19:56.451424] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:56.953178] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:19:58.296919] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:19:58.800504] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:19:59.302335] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:19:59.803709] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 37, in fetch
+    balance = self.api.get_balance_sheet(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 16, in get_balance_sheet
+    return self._get_report_of('BalanceSheet', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:19:59.805471] ERROR: main: Error: code: -1: Key `S:SZ000402` pushed back, detail: RetryFailure
+[2020-10-16 10:20:01.808961] INFO: main: Gen: 66: key: S:SZ000403
+[2020-10-16 10:20:02.815509] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:04.082012] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:04.583739] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:20:05.085108] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:20:05.586260] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:20:05.588142] ERROR: main: Error: code: -1: Key `S:SZ000403` pushed back, detail: RetryFailure
+[2020-10-16 10:20:07.591674] INFO: main: Gen: 66: key: S:SZ000404
+[2020-10-16 10:20:10.324518] INFO: main: CheckSame:SZ000404:cashflow
+[2020-10-16 10:20:10.360618] INFO: main: CheckSame:SZ000404:balance
+[2020-10-16 10:20:10.388047] INFO: main: CheckSame:SZ000404:income
+[2020-10-16 10:20:12.393547] INFO: main: Gen: 67: key: S:SZ000405
+[2020-10-16 10:20:12.394972] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:12.896626] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:20:13.398366] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:20:13.899748] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 33, in fetch
+    cashflow = self.api.get_cashflow_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 13, in get_cashflow_statement
+    return self._get_report_of('CashFlow', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:20:13.901267] ERROR: main: Error: code: -1: Key `S:SZ000405` pushed back, detail: RetryFailure
+[2020-10-16 10:20:15.904788] INFO: main: Gen: 67: key: S:SZ000406
+[2020-10-16 10:20:17.693287] INFO: main: CheckSame:SZ000406:cashflow
+[2020-10-16 10:20:17.716704] INFO: main: CheckSame:SZ000406:balance
+[2020-10-16 10:20:17.745406] INFO: main: CheckSame:SZ000406:income
+[2020-10-16 10:20:19.750837] INFO: main: Gen: 68: key: S:SZ000407
+[2020-10-16 10:20:19.752426] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:22.595707] INFO: main: CheckSame:SZ000407:cashflow
+[2020-10-16 10:20:22.612226] INFO: main: CheckSame:SZ000407:balance
+[2020-10-16 10:20:22.624007] INFO: main: CheckSame:SZ000407:income
+[2020-10-16 10:20:24.629782] INFO: main: Gen: 69: key: S:SZ000408
+[2020-10-16 10:20:25.671859] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:27.551047] INFO: main: CheckSame:SZ000408:cashflow
+[2020-10-16 10:20:27.582368] INFO: main: CheckSame:SZ000408:balance
+[2020-10-16 10:20:27.595919] INFO: main: CheckSame:SZ000408:income
+[2020-10-16 10:20:29.603880] INFO: main: Gen: 70: key: S:SZ000409
+[2020-10-16 10:20:29.605325] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:32.600379] INFO: main: CheckSame:SZ000409:cashflow
+[2020-10-16 10:20:32.649966] INFO: main: CheckSame:SZ000409:balance
+[2020-10-16 10:20:32.704852] INFO: main: CheckSame:SZ000409:income
+[2020-10-16 10:20:34.711526] INFO: main: Gen: 71: key: S:SZ000410
+[2020-10-16 10:20:34.712881] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:35.214549] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:20:38.245544] INFO: main: CheckSame:SZ000410:cashflow
+[2020-10-16 10:20:38.264064] INFO: main: CheckSame:SZ000410:balance
+[2020-10-16 10:20:38.273450] INFO: main: CheckSame:SZ000410:income
+[2020-10-16 10:20:40.278311] INFO: main: Gen: 72: key: S:SZ000411
+[2020-10-16 10:20:42.317537] INFO: main: CheckSame:SZ000411:cashflow
+[2020-10-16 10:20:42.353571] INFO: main: CheckSame:SZ000411:balance
+[2020-10-16 10:20:42.362501] INFO: main: CheckSame:SZ000411:income
+[2020-10-16 10:20:44.368314] INFO: main: Gen: 73: key: S:SZ000412
+[2020-10-16 10:20:44.369945] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:46.671160] INFO: main: CheckSame:SZ000412:cashflow
+[2020-10-16 10:20:46.677431] INFO: main: CheckSame:SZ000412:balance
+[2020-10-16 10:20:46.687917] INFO: main: CheckSame:SZ000412:income
+[2020-10-16 10:20:48.690413] INFO: main: Gen: 74: key: S:SZ000413
+[2020-10-16 10:20:51.413041] INFO: main: CheckSame:SZ000413:cashflow
+[2020-10-16 10:20:51.433629] INFO: main: CheckSame:SZ000413:balance
+[2020-10-16 10:20:51.450517] INFO: main: CheckSame:SZ000413:income
+[2020-10-16 10:20:53.454833] INFO: main: Gen: 75: key: S:SZ000415
+[2020-10-16 10:20:53.456415] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:53.958140] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:20:56.775708] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:20:58.116492] INFO: main: CheckSame:SZ000415:cashflow
+[2020-10-16 10:20:58.138925] INFO: main: CheckSame:SZ000415:balance
+[2020-10-16 10:20:58.144949] INFO: main: CheckSame:SZ000415:income
+[2020-10-16 10:21:00.150681] INFO: main: Gen: 76: key: S:SZ000416
+[2020-10-16 10:21:00.152195] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:01.970683] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:03.318751] INFO: main: CheckSame:SZ000416:cashflow
+[2020-10-16 10:21:03.340665] INFO: main: CheckSame:SZ000416:balance
+[2020-10-16 10:21:03.366568] INFO: main: CheckSame:SZ000416:income
+[2020-10-16 10:21:05.372571] INFO: main: Gen: 77: key: S:SZ000417
+[2020-10-16 10:21:06.329578] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:08.447365] INFO: main: CheckSame:SZ000417:cashflow
+[2020-10-16 10:21:08.479821] INFO: main: CheckSame:SZ000417:balance
+[2020-10-16 10:21:08.493296] INFO: main: CheckSame:SZ000417:income
+[2020-10-16 10:21:10.499384] INFO: main: Gen: 78: key: S:SZ000418
+[2020-10-16 10:21:10.501031] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:13.345528] INFO: main: CheckSame:SZ000418:cashflow
+[2020-10-16 10:21:13.367046] INFO: main: CheckSame:SZ000418:balance
+[2020-10-16 10:21:13.391818] INFO: main: CheckSame:SZ000418:income
+[2020-10-16 10:21:15.397718] INFO: main: Gen: 79: key: S:SZ000419
+[2020-10-16 10:21:16.220356] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:18.401042] INFO: main: CheckSame:SZ000419:cashflow
+[2020-10-16 10:21:18.420043] INFO: main: CheckSame:SZ000419:balance
+[2020-10-16 10:21:18.425322] INFO: main: CheckSame:SZ000419:income
+[2020-10-16 10:21:20.430237] INFO: main: Gen: 80: key: S:SZ000420
+[2020-10-16 10:21:22.565035] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:23.066859] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:21:23.568660] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:21:24.070047] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:21:24.072202] ERROR: main: Error: code: -1: Key `S:SZ000420` pushed back, detail: RetryFailure
+[2020-10-16 10:21:26.075785] INFO: main: Gen: 80: key: S:SZ000421
+[2020-10-16 10:21:28.244276] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:29.503193] INFO: main: CheckSame:SZ000421:cashflow
+[2020-10-16 10:21:29.518434] INFO: main: CheckSame:SZ000421:balance
+[2020-10-16 10:21:29.527267] INFO: main: CheckSame:SZ000421:income
+[2020-10-16 10:21:31.532832] INFO: main: Gen: 81: key: S:SZ000422
+[2020-10-16 10:21:31.534509] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:34.158378] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:34.660216] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:21:35.824759] INFO: main: CheckSame:SZ000422:cashflow
+[2020-10-16 10:21:35.836295] INFO: main: CheckSame:SZ000422:balance
+[2020-10-16 10:21:35.845269] INFO: main: CheckSame:SZ000422:income
+[2020-10-16 10:21:37.849653] INFO: main: Gen: 82: key: S:SZ000423
+[2020-10-16 10:21:39.024255] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:41.281189] INFO: main: CheckSame:SZ000423:cashflow
+[2020-10-16 10:21:41.301274] INFO: main: CheckSame:SZ000423:balance
+[2020-10-16 10:21:41.332034] INFO: main: CheckSame:SZ000423:income
+[2020-10-16 10:21:43.338347] INFO: main: Gen: 83: key: S:SZ000425
+[2020-10-16 10:21:44.468882] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:44.970682] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:21:45.472472] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:21:45.973738] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 37, in fetch
+    balance = self.api.get_balance_sheet(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 16, in get_balance_sheet
+    return self._get_report_of('BalanceSheet', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:21:45.975046] ERROR: main: Error: code: -1: Key `S:SZ000425` pushed back, detail: RetryFailure
+[2020-10-16 10:21:47.978166] INFO: main: Gen: 83: key: S:SZ000426
+[2020-10-16 10:21:49.844805] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:50.346677] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:21:50.848476] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:21:51.349878] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:21:51.351774] ERROR: main: Error: code: -1: Key `S:SZ000426` pushed back, detail: RetryFailure
+[2020-10-16 10:21:53.355185] INFO: main: Gen: 83: key: S:SZ000428
+[2020-10-16 10:21:53.356836] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:53.858601] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:21:56.202127] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:21:57.940683] INFO: main: CheckSame:SZ000428:cashflow
+[2020-10-16 10:21:57.965150] INFO: main: CheckSame:SZ000428:balance
+[2020-10-16 10:21:57.988013] INFO: main: CheckSame:SZ000428:income
+[2020-10-16 10:21:59.994130] INFO: main: Gen: 84: key: S:SZ000429
+[2020-10-16 10:22:01.891885] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:22:03.176606] INFO: main: CheckSame:SZ000429:cashflow
+[2020-10-16 10:22:03.186058] INFO: main: CheckSame:SZ000429:balance
+[2020-10-16 10:22:03.198430] INFO: main: CheckSame:SZ000429:income
+[2020-10-16 10:22:05.202689] INFO: main: Gen: 85: key: S:SZ000430
+[2020-10-16 10:22:07.468775] INFO: main: CheckSame:SZ000430:cashflow
+[2020-10-16 10:22:07.492787] INFO: main: CheckSame:SZ000430:balance
+[2020-10-16 10:22:07.501789] INFO: main: CheckSame:SZ000430:income
+[2020-10-16 10:22:09.506428] INFO: main: Gen: 86: key: S:SZ000488
+[2020-10-16 10:22:09.508041] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:22:10.009815] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:22:13.214894] INFO: main: CheckSame:SZ000488:cashflow
+[2020-10-16 10:22:13.245123] INFO: main: CheckSame:SZ000488:balance
+[2020-10-16 10:22:13.256290] INFO: main: CheckSame:SZ000488:income
+[2020-10-16 10:22:15.262102] INFO: main: Gen: 87: key: S:SZ000498
+[2020-10-16 10:22:17.669459] INFO: main: CheckSame:SZ000498:cashflow
+[2020-10-16 10:22:17.694694] INFO: main: CheckSame:SZ000498:balance
+[2020-10-16 10:22:17.700990] INFO: main: CheckSame:SZ000498:income
+[2020-10-16 10:22:19.706712] INFO: main: Gen: 88: key: S:SZ000501
+[2020-10-16 10:22:19.708307] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:22:23.247386] INFO: main: CheckSame:SZ000501:cashflow
+[2020-10-16 10:22:23.269217] INFO: main: CheckSame:SZ000501:balance
+[2020-10-16 10:22:23.285498] INFO: main: CheckSame:SZ000501:income
+[2020-10-16 10:22:25.291254] INFO: main: Gen: 89: key: S:SZ000502
+[2020-10-16 10:22:26.796850] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:22:27.298705] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:22:27.800121] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:22:28.301331] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:22:28.303295] ERROR: main: Error: code: -1: Key `S:SZ000502` pushed back, detail: RetryFailure
+[2020-10-16 10:22:30.306859] INFO: main: Gen: 89: key: S:SZ000503
+[2020-10-16 10:22:32.191305] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:22:32.693042] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:22:34.429091] INFO: main: CheckSame:SZ000503:cashflow
+[2020-10-16 10:22:34.490550] INFO: main: CheckSame:SZ000503:balance
+[2020-10-16 10:22:34.518880] INFO: main: CheckSame:SZ000503:income
+[2020-10-16 10:22:36.525411] INFO: main: Gen: 90: key: S:SZ000504
+[2020-10-16 10:22:36.526865] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:22:37.028537] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:22:38.583107] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:22:41.136163] INFO: main: CheckSame:SZ000504:cashflow
+[2020-10-16 10:22:41.180223] INFO: main: CheckSame:SZ000504:balance
+[2020-10-16 10:22:41.197059] INFO: main: CheckSame:SZ000504:income
+[2020-10-16 10:22:43.203018] INFO: main: Gen: 91: key: S:SZ000505
+[2020-10-16 10:22:46.217802] INFO: main: CheckSame:SZ000505:cashflow
+[2020-10-16 10:22:46.241545] INFO: main: CheckSame:SZ000505:balance
+[2020-10-16 10:22:46.261714] INFO: main: CheckSame:SZ000505:income
+[2020-10-16 10:22:48.266853] INFO: main: Gen: 92: key: S:SZ000506
+[2020-10-16 10:22:50.209805] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:22:51.766267] INFO: main: CheckSame:SZ000506:cashflow
+[2020-10-16 10:22:51.814205] INFO: main: CheckSame:SZ000506:balance
+[2020-10-16 10:22:51.831538] INFO: main: CheckSame:SZ000506:income
+[2020-10-16 10:22:53.837275] INFO: main: Gen: 93: key: S:SZ000507
+[2020-10-16 10:22:56.471181] INFO: main: CheckSame:SZ000507:cashflow
+[2020-10-16 10:22:56.510043] INFO: main: CheckSame:SZ000507:balance
+[2020-10-16 10:22:56.527245] INFO: main: CheckSame:SZ000507:income
+[2020-10-16 10:22:58.532924] INFO: main: Gen: 94: key: S:SZ000508
+[2020-10-16 10:22:59.974713] INFO: main: CheckSame:SZ000508:cashflow
+[2020-10-16 10:22:59.987542] INFO: main: CheckSame:SZ000508:balance
+[2020-10-16 10:23:00.001247] INFO: main: CheckSame:SZ000508:income
+[2020-10-16 10:23:02.007635] INFO: main: Gen: 95: key: S:SZ000509
+[2020-10-16 10:23:02.009016] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:05.030685] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:06.150906] INFO: main: CheckSame:SZ000509:cashflow
+[2020-10-16 10:23:06.167952] INFO: main: CheckSame:SZ000509:balance
+[2020-10-16 10:23:06.180338] INFO: main: CheckSame:SZ000509:income
+[2020-10-16 10:23:08.186241] INFO: main: Gen: 96: key: S:SZ000510
+[2020-10-16 10:23:08.187797] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:11.478431] INFO: main: CheckSame:SZ000510:cashflow
+[2020-10-16 10:23:11.515484] INFO: main: CheckSame:SZ000510:balance
+[2020-10-16 10:23:11.531364] INFO: main: CheckSame:SZ000510:income
+[2020-10-16 10:23:13.537032] INFO: main: Gen: 97: key: S:SZ000511
+[2020-10-16 10:23:13.538618] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:16.825775] INFO: main: CheckSame:SZ000511:cashflow
+[2020-10-16 10:23:16.852129] INFO: main: CheckSame:SZ000511:balance
+[2020-10-16 10:23:16.860356] INFO: main: CheckSame:SZ000511:income
+[2020-10-16 10:23:18.865791] INFO: main: Gen: 98: key: S:SZ000513
+[2020-10-16 10:23:19.972474] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:22.131760] INFO: main: CheckSame:SZ000513:cashflow
+[2020-10-16 10:23:22.165975] INFO: main: CheckSame:SZ000513:balance
+[2020-10-16 10:23:22.178444] INFO: main: CheckSame:SZ000513:income
+[2020-10-16 10:23:24.182793] INFO: main: Gen: 99: key: S:SZ000514
+[2020-10-16 10:23:24.184318] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:26.614354] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:27.929566] INFO: main: CheckSame:SZ000514:cashflow
+[2020-10-16 10:23:27.972053] INFO: main: CheckSame:SZ000514:balance
+[2020-10-16 10:23:27.997434] INFO: main: CheckSame:SZ000514:income
+[2020-10-16 10:23:30.002840] INFO: main: Gen: 100: key: S:SZ000515
+[2020-10-16 10:23:31.864078] INFO: main: CheckSame:SZ000515:cashflow
+[2020-10-16 10:23:31.872941] INFO: main: CheckSame:SZ000515:balance
+[2020-10-16 10:23:31.885345] INFO: main: CheckSame:SZ000515:income
+[2020-10-16 10:23:33.890705] INFO: main: Gen: 101: key: S:SZ000516
+[2020-10-16 10:23:33.892447] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:36.306890] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:37.587116] INFO: main: CheckSame:SZ000516:cashflow
+[2020-10-16 10:23:37.598841] INFO: main: CheckSame:SZ000516:balance
+[2020-10-16 10:23:37.607772] INFO: main: CheckSame:SZ000516:income
+[2020-10-16 10:23:39.612349] INFO: main: Gen: 102: key: S:SZ000517
+[2020-10-16 10:23:39.613793] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:40.115446] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:23:41.681250] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:43.861798] INFO: main: CheckSame:SZ000517:cashflow
+[2020-10-16 10:23:43.899228] INFO: main: CheckSame:SZ000517:balance
+[2020-10-16 10:23:43.908058] INFO: main: CheckSame:SZ000517:income
+[2020-10-16 10:23:45.913269] INFO: main: Gen: 103: key: S:SZ000518
+[2020-10-16 10:23:45.914920] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:46.416672] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:23:49.427610] INFO: main: CheckSame:SZ000518:cashflow
+[2020-10-16 10:23:49.438572] INFO: main: CheckSame:SZ000518:balance
+[2020-10-16 10:23:49.481108] INFO: main: CheckSame:SZ000518:income
+[2020-10-16 10:23:51.486721] INFO: main: Gen: 104: key: S:SZ000519
+[2020-10-16 10:23:54.154088] INFO: main: CheckSame:SZ000519:cashflow
+[2020-10-16 10:23:54.173181] INFO: main: CheckSame:SZ000519:balance
+[2020-10-16 10:23:54.181008] INFO: main: CheckSame:SZ000519:income
+[2020-10-16 10:23:56.186791] INFO: main: Gen: 105: key: S:SZ000520
+[2020-10-16 10:23:56.188232] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:57.328644] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:23:59.630761] INFO: main: CheckSame:SZ000520:cashflow
+[2020-10-16 10:23:59.668233] INFO: main: CheckSame:SZ000520:balance
+[2020-10-16 10:23:59.676470] INFO: main: CheckSame:SZ000520:income
+[2020-10-16 10:24:01.682051] INFO: main: Gen: 106: key: S:SZ000521
+[2020-10-16 10:24:01.682734] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:24:02.184235] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:24:02.686060] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:24:03.187443] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 33, in fetch
+    cashflow = self.api.get_cashflow_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 13, in get_cashflow_statement
+    return self._get_report_of('CashFlow', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:24:03.188849] ERROR: main: Error: code: -1: Key `S:SZ000521` pushed back, detail: RetryFailure
+[2020-10-16 10:24:05.191741] INFO: main: Gen: 106: key: S:SZ000522
+[2020-10-16 10:24:05.192524] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:24:06.658153] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:24:09.311989] INFO: main: CheckSame:SZ000522:cashflow
+[2020-10-16 10:24:09.356693] INFO: main: CheckSame:SZ000522:balance
+[2020-10-16 10:24:09.380480] INFO: main: CheckSame:SZ000522:income
+[2020-10-16 10:24:11.386858] INFO: main: Gen: 107: key: S:SZ000523
+[2020-10-16 10:24:13.938979] INFO: main: CheckSame:SZ000523:cashflow
+[2020-10-16 10:24:13.959898] INFO: main: CheckSame:SZ000523:balance
+[2020-10-16 10:24:13.968552] INFO: main: CheckSame:SZ000523:income
+[2020-10-16 10:24:15.974035] INFO: main: Gen: 108: key: S:SZ000524
+[2020-10-16 10:24:18.228190] INFO: main: CheckSame:SZ000524:cashflow
+[2020-10-16 10:24:18.264397] INFO: main: CheckSame:SZ000524:balance
+[2020-10-16 10:24:18.285936] INFO: main: CheckSame:SZ000524:income
+[2020-10-16 10:24:20.290443] INFO: main: Gen: 109: key: S:SZ000525
+[2020-10-16 10:24:21.757574] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:24:22.259286] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:24:22.761069] WARNING: main: Sleep, then Retry 1 ...
+[2020-10-16 10:24:23.262490] ERROR: main: Traceback (most recent call last):
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/scheduled/scheduler.py", line 76, in run
+    data, options = self.fetcher.fetch(key)
+  File "/home/lsl/Linghou/maxwell/servers/finance/finance-sina/R2/main/finance_sina/fetcher.py", line 41, in fetch
+    income = self.api.get_income_statement(code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 19, in get_income_statement
+    return self._get_report_of('ProfitStatement', code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 22, in _get_report_of
+    text = self._rawget_report_of(statement_type, distype=4, code=code)
+  File "/home/lsl/Linghou/newton/include/finapi/sina/SinaFinanceAPI.py", line 29, in _rawget_report_of
+    text = self.spider.get_source(url, charset='gb2312')
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 46, in get_source
+    rv = self.remote_send_recv('get_source', *args, **kwargs)
+  File "/home/lsl/Linghou/newton/include/finapi/common/spider/spider_client.py", line 78, in remote_send_recv
+    raise Exception('RetryFailure')
+Exception: RetryFailure
+
+[2020-10-16 10:24:23.264300] ERROR: main: Error: code: -1: Key `S:SZ000525` pushed back, detail: RetryFailure
+[2020-10-16 10:24:25.267899] INFO: main: Gen: 109: key: S:SZ000526
+[2020-10-16 10:24:26.536795] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:24:27.038496] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:24:29.531499] INFO: main: CheckSame:SZ000526:cashflow
+[2020-10-16 10:24:29.538771] INFO: main: CheckSame:SZ000526:balance
+[2020-10-16 10:24:29.547863] INFO: main: CheckSame:SZ000526:income
+[2020-10-16 10:24:31.552688] INFO: main: Gen: 110: key: S:SZ000527
+[2020-10-16 10:24:33.496429] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:24:34.761022] INFO: main: CheckSame:SZ000527:cashflow
+[2020-10-16 10:24:34.805880] INFO: main: CheckSame:SZ000527:balance
+[2020-10-16 10:24:34.810935] INFO: main: CheckSame:SZ000527:income
+[2020-10-16 10:24:36.816440] INFO: main: Gen: 111: key: S:SZ000528
+[2020-10-16 10:24:40.827425] INFO: main: CheckSame:SZ000528:cashflow
+[2020-10-16 10:24:40.859432] INFO: main: CheckSame:SZ000528:balance
+[2020-10-16 10:24:40.868039] INFO: main: CheckSame:SZ000528:income
+[2020-10-16 10:24:42.873445] INFO: main: Gen: 112: key: S:SZ000529
+[2020-10-16 10:24:42.875035] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:24:43.376888] WARNING: main: Sleep, then Retry 2 ...
+[2020-10-16 10:24:44.547427] WARNING: main: Sleep, then Retry 3 ...
+[2020-10-16 10:24:46.766222] INFO: main: CheckSame:SZ000529:cashflow
+[2020-10-16 10:24:46.793073] INFO: main: CheckSame:SZ000529:balance
+[2020-10-16 10:24:46.812273] INFO: main: CheckSame:SZ000529:income

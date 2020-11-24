@@ -1,0 +1,27 @@
+{
+    "key_yielder": {
+        "mode": "update",
+        "days_to_today": 10
+    },
+    "storage": {
+        "redis_connection": {
+            "db": 0,
+            "host": "127.0.0.1",
+            "port": 6379,
+            "password": null
+        },
+        "redis_prefix": "eastmoney:finance_notice:update"
+    },
+    "distributer": {
+        "init_reset": true,
+        "generator_interval": 0.01,
+        "recheck_count": 3,
+        "recheck_sleep": 1
+    },
+    "logger": {
+        "name": "dist:eastmoney:finance_notice:update",
+        "filename": "./log/main.log",
+        "console_level": "debug",
+        "by_date": true
+    }
+}

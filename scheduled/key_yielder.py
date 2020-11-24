@@ -1,16 +1,21 @@
 import abc
 import six
-import logging
+from .logger import publisher_log
 
-
-_logger = logging.getLogger(__name__)
 
 class KeyYielder(six.with_metaclass(abc.ABCMeta)):
 
     def __init__(self, config=None, logger=None): 
         self.config = config or {}
-        self.logger = logger or _logger
+        self.logger = logger or publisher_log
+        self.initialize()
+
+    def initialize(self):
+        pass
 
     @abc.abstractmethod
     def yield_key(self):
         raise NotImplementedError()
+
+    def finalize(self):
+        pass

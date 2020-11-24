@@ -42,7 +42,7 @@ def classname_to_configname(class_name):
 
 if __name__ == '__main__':
     def test_module_class():
-        from settings import KEY_YIELDER
+        # from settings import KEY_YIELDER
         path = '.key_yielder.KeyYielder'
         module_name, class_name = split_moduleclass_path(path)
         print(module_name, class_name)

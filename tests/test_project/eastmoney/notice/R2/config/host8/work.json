@@ -1,0 +1,44 @@
+{
+    "fetcher": {
+        "server_list": [
+            "tcp://106.54.201.205:5678",
+            "tcp://106.12.180.32:5678",
+            "tcp://121.89.202.46:5678"
+        ],
+        "fetch_interval": 0.3,
+        "_timeout": 10,
+        "_retry_count": 3
+    },
+    "storage": {
+        "redis_connection": {
+            "db": 0,
+            "host": "127.0.0.1",
+            "port": 6379,
+            "password": null
+        },
+        "redis_prefix": "finance_sina"
+    },
+    "pipelines": {
+        "_sqlite_storer": {
+            "db_root_path": "temp",
+            "_db_root_path": "/media/lsl/untitled/findata/astock/dayprice/netease",
+            "db_tagname": "finance_sina"
+        },
+        "file_storer": {
+            "out_root_path": "/media/lsl/untitled/findata/astock/finance/sina",
+            "tag": "raw"
+        }
+    },
+    "scheduler": {
+        "interval": 2,
+        "recheck_count": 3,
+        "recheck_sleep": 1
+    },
+    "logger": {
+        "name": "main",
+        "console_level": "DEBUG",
+        "file_level": "INFO",
+        "filename": "./log/finance_sina_w.log",
+        "by_date": true
+    }
+}

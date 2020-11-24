@@ -1,4 +1,5 @@
 import time
+import config
 import random
 from scheduled import RedisQueue
 

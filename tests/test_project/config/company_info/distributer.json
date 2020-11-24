@@ -1,0 +1,21 @@
+{
+    "key_yielder": {
+        "mode": "fix"
+    },
+    "redis_queue": {
+        "queue_id": "eastmoney:company_info"
+    },
+    "distributer": {
+        "init_reset": true,
+        "generator_interval": 0.01,
+        "recheck_count": 3,
+        "recheck_sleep": 1
+    },
+    "logger": {
+        "name": "eastmoney:company_info:dist",
+        "filename": "./log/eastmoney/company_info_d.log",
+        "console_level": "INFO",
+        "file_level": "INFO",
+        "by_date": true
+    }
+}

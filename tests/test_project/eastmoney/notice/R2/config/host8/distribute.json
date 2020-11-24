@@ -1,0 +1,28 @@
+{
+    "key_yielder": {
+        "_days_to_today": null,
+        "_start_date": "1990-01-01",
+        "_end_date": null
+    },
+    "storage": {
+        "redis_connection": {
+            "db": 0,
+            "host": "127.0.0.1",
+            "port": 6379,
+            "password": null
+        },
+        "redis_prefix": "finance_sina"
+    },
+    "distributer": {
+        "init_reset": true,
+        "generator_interval": 0,
+        "recheck_count": 3,
+        "recheck_sleep": 1
+    },
+    "logger": {
+        "name": "main",
+        "console_level": "DEBUG",
+        "filename": "./log/finance_sina_d.log",
+        "by_date": true
+    }
+}
