@@ -8,9 +8,10 @@ from configparser import ConfigParser
 from scheduled.utils import yaml_config_logging
 from scheduled.runs import get_publisher, get_worker
 from scheduled.config import default_config
+from scheduled.server import app
 # add path
 sys.path.insert(0, os.getcwd())
-from scheduled_server import app
+print(sys.path)
 
 
 _project_config_file = default_config.get('project_config_file', 'scheduled.cfg')
@@ -114,6 +115,7 @@ def server(host, port):
     port = port or cfg['settings'].get('server_port') or 8091
     click.echo('Server at http://%s:%d ..' % (host, port))
     app.run(host=host, port=port)
+
 
 if __name__ == '__main__':
     cli()
