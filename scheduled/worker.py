@@ -1,5 +1,6 @@
 import time
 import enum
+import signal
 import traceback
 from .logger import worker_log
 
@@ -34,6 +35,9 @@ class Worker(object):
 
         # state
         self._run_id = None
+        # 重置
+        self.queue.mark_stop(0)
+        self._should_stop = False # manually
         # self._state = WorkerState.NotStarted
 
     def get_keys_info(self):
@@ -51,7 +55,24 @@ class Worker(object):
         self.logger.info('TODO keys: %s ..., num=%d' % (str(todo_keys[:5]), len(todo_keys)))
         self.logger.info('NULL keys: %s, num=%d' % (str(null_keys), len(null_keys)))
 
+    def should_stop(self):
+        rv = False
+        if self.queue.test_should_stop() or self._should_stop:
+            rv = True
+        return rv
+
     def run(self):
+        while 1:
+            if self.should_stop():
+                self.logger.info('Stop [should_stop==1]')
+                break
+
+            n_unfished_key, force_exit = self._run()
+            if force_exit or n_unfished_key == 0:
+                break
+            time.sleep(10)
+
+    def _run(self):
         self.logger.info('Running ...')
         todo_keys, doing_keys, done_keys, error_keys, null_keys = self.get_keys_info()
         self.print_queue_info(todo_keys, doing_keys, done_keys, error_keys, null_keys)
@@ -59,12 +80,24 @@ class Worker(object):
         if error_keys and self.init_error_to_todo:
             self.logger.info('Move errror-key -> todo-key ...3 sec ...')
             time.sleep(3)
+            self.logger.info('`errors` to `todo` ..')
             self.queue.all_errors_to_todos()
+            # self.logger.info('`doing` to `todo` ..')
+            # self.queue.all_doings_to_todos()
 
         # n_done, n_todo, n_errors = 0, 0, 0
+        force_exit = False
         i = 0
         retry_countdown = self.recheck_count
+        prev_time = time.time()
         while True:
+            now = time.time()
+            if now - prev_time > 3:
+                if self.should_stop():
+                    self.logger.info('Stop [`mark` reason]')
+                    break
+                prev_time = now
+
             key = self.queue.pop_key() # [todo] -> [doing]
             self.logger.info('%d: key: %s' % (i + 1, key))
 
@@ -88,6 +121,7 @@ class Worker(object):
                 data, metadata = self.fetcher.fetch(key)
                 self.fetcher.after_fetch(key, data, metadata)
                 metadata = metadata or {}
+                metadata.update({'key': key})
 
                 if data is not None:
                     for pipeline in self.pipelines:
@@ -107,6 +141,7 @@ class Worker(object):
                 errno, msg = -999, 'Key `%s` pushed back, Stopped by user.' % key
                 self.queue.doing_to_todo(key, reverse=False)
                 self.logger.info(msg)
+                force_exit = True
                 break
             except Exception as e:
                 self.logger.error(traceback.format_exc())
@@ -122,6 +157,14 @@ class Worker(object):
         self.logger.info('TODO keys: [%s ...], num=%d' % (str(todo_keys[:5]), len(todo_keys)))
         self.logger.info('NULL keys: %s, num=%d' % (str(null_keys), len(null_keys)))
 
-        # n_done_key = len(done_keys)
-        n_error_key = len(error_keys)
-        return n_error_key
+        n_unfished_key = len(doing_keys) + len(todo_keys)
+        # print('not done: ', n_unfished_key)
+        if n_unfished_key > 0:
+            self.logger.info('【未完成】: [n_todo/🍉]=%d, [n_doing/🍊]=%d, [n_error/👀]=%d' % (
+                len(todo_keys), len(doing_keys), len(error_keys)
+            ))
+        else:
+            self.logger.info('【完成】: [n_done/🍅]=%d, [n_null🥔]=%d' % (
+                len(done_keys), len(null_keys)
+            ))
+        return n_unfished_key, force_exit

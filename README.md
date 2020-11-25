@@ -49,4 +49,8 @@ print('errno', err)
 ## ChangeLog
     * [@2020-10-26 18:35:12] logbook -> logging
     * [@2020-10-27 11:53:46] added: scripts
-    * [@2020-11-25 03:09:58] v0.2.0 distributer --> publisher
+    * [@2020-11-25 03:09:58] v0.2.0 distributer --> publisher, suport multi-worker
+
+## KnownIssue
+    中途被强制中断：todo -> doing, 导致doing始终不为空，且不运行,
+    要求不能出现强制中断的情况
