@@ -3,6 +3,7 @@ import enum
 import signal
 import traceback
 from .logger import worker_log
+from .config import default_config
 
 
 class WorkerState(enum.IntEnum):
@@ -29,7 +30,7 @@ class Worker(object):
         # self.run_mode = self.config.get('run_mode', 'once')
         self.recheck_count = self.config.get('recheck_count', 3)
         self.recheck_sleep = self.config.get('recheck_sleep', 1.0)
-        self.worker_interval = self.config.get('worker_interval', 1.0)
+        self.interval = self.config.get('interval', 1.0)
         self.init_error_to_todo = self.config.get('init_error_to_todo', True)
         # self.n_retry_if_error = self.config.get('n_retry_if_error', 3)
 
@@ -90,9 +91,10 @@ class Worker(object):
         i = 0
         retry_countdown = self.recheck_count
         prev_time = time.time()
+        warm_stop_interval = default_config.get('warm_stop_interval', 1)
         while True:
             now = time.time()
-            if now - prev_time > 3:
+            if now - prev_time > warm_stop_interval:
                 if self.should_stop():
                     self.logger.info('Stop [`mark` reason]')
                     break
@@ -135,7 +137,7 @@ class Worker(object):
                     errno, msg = 1, 'Null value fetched'
                     self.queue.doing_to_null(key, reverse=False)
                     self.logger.warning('Null: %d: %s' % (errno, msg))
-                time.sleep(self.worker_interval)
+                time.sleep(self.interval)
                 i += 1
             except (KeyboardInterrupt, SystemExit):
                 errno, msg = -999, 'Key `%s` pushed back, Stopped by user.' % key
@@ -148,7 +150,7 @@ class Worker(object):
                 errno, msg = -1, 'Key `%s` pushed back, detail: %s' % (key, str(e))
                 self.queue.doing_to_error(key, reverse=True)
                 self.logger.error(msg)
-                time.sleep(self.worker_interval)
+                time.sleep(self.interval)
 
         todo_keys, doing_keys, done_keys, error_keys, null_keys = self.get_keys_info()
         self.logger.info('Done keys: [%s ...]: num=%d' % (str(done_keys[:5]), len(done_keys)))
